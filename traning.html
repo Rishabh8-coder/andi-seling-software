@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andi software - Vastu & Design Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #ac8844;
+            --dark-color: #3a3632;
+            --light-color: #f9f5f0;
+            --text-color: #555;
+        }
+        
+        body {
+            background-color: #fff;
+        }
+        /* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    background-color: #2b2726;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.email, .address {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-right: 15px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.email i, .address i {
+    margin-right: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #c9a55a;
+}
+
+/* Header */
+.header {
+    background-color: #2b2726;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: inside;
+    flex-wrap: wrap;
+}
+
+.nav-menu ul li {
+    margin: 0 15px 5px 0;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #c9a55a;
+}
+
+.book-btn {
+    background-color: #c9a55a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #b89345;
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+        
+        /* Internship Section */
+        .internship {
+            padding: 80px 20px;
+            background-color: white;
+        }
+        
+        .internship-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .internship-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .internship-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .internship-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .internship-text h2 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+        
+        .highlight-list {
+            margin-top: 20px;
+        }
+        
+        .highlight-list h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .highlight-item {
+            margin-bottom: 15px;
+        }
+        
+        .highlight-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #555;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .nav-links a {
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .book-btn {
+                display: none;
+            }
+            
+            .book-btn-mobile {
+                display: block;
+                width: 80%;
+                margin: 20px auto;
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: transparent;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: var(--dark-color);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .footer-section {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Top Bar -->
+     <div class="top-bar container">
+        <div class="contact-info">
+            <div class="address">
+                <i class="fas fa-map-marker-alt"></i>
+                near, Railway Rd, Geeta Colony, Panipat, Haryana 132103
+            </div>
+            <div class="email">
+                <i class="fas fa-envelope"></i>
+                andisoftwaresolutions@gmail.com
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.whatsapp.com/" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="andi logo.jpg" alt="andi software">
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="traning.html">Training</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="Enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                </ul>
+                <button class="book-btn"><a href="contact.html">Book Appointment</a></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Internship Section -->
+    <section class="internship" id="training">
+        <div class="internship-content">
+            <div class="internship-image">
+                <img src="intership.jpg" alt="Internship Program">
+            </div>
+            <div class="internship-text">
+                <h2>6-Week Internship Program in Architectural Assistanceship, Vastu, Astro Vastu, and Numerology</h2>
+                <p>Are you passionate about architecture and fascinated by the ancient sciences of Vastu and Numerology? Our 6-week internship program offers a unique opportunity to blend modern architectural practices with the time-tested principles of Vastu and Astro Vastu, along with the mystical insights of Numerology.</p>
+                
+                <div class="highlight-list">
+                    <h3>Program Highlights</h3>
+                    
+                    <div class="highlight-item">
+                        <h4>Architectural Assistanceship</h4>
+                        <p>Gain hands-on experience in architectural design and planning. Work alongside experienced architects on real-world projects, from initial concept to final execution.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>Vastu Shastra</h4>
+                        <p>Learn the principles of Vastu Shastra, the traditional Indian system of architecture that promotes harmony and positive energy in living spaces. Understand how to apply these principles to modern architectural designs.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>Astro Vastu</h4>
+                        <p>Explore the synergy between astrology and Vastu. Discover how celestial influences can be harmonized with architectural designs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Andi software </h3>
+                <p>Andi software is a leading provider of Vastu, Architectural, and Design services blending ancient wisdom with modern techniques. We help create harmonious living and working spaces.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#training">Training</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> near, Railway Rd, Geeta Colony, Panipat, Haryana 132103</li>
+                    <li><i class="fas fa-phone"></i> +91-75081-96392</li>
+                    <li><i class="fas fa-envelope"></i> andisoftwaresolutions@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 andi software. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const closeMenu = document.getElementById('closeMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    navLinks.classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handler
+        const contactForm = document.querySelector('.contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form values
+                const formData = new FormData(contactForm);
+                const formValues = Object.fromEntries(formData.entries());
+                
+                // Here you would typically send the data to a server
+                console.log('Form submitted with values:', formValues);
+                
+                // Show success message
+                alert('Thank you for your message! We will get back to you soon.');
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+        
+        // Add active class to navigation links based on scroll position
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(navItem => {
+                navItem.classList.remove('active');
+                if (navItem.getAttribute('href') === '#' + current) {
+                    navItem.classList.add('active');
+                }
+            });
+        });
+        
+        // Image lazy loading
+        document.addEventListener('DOMContentLoaded', () => {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                });
+            }
+        });
+        
+        // Performance optimization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add rel="preconnect" for external resources
+            const linkPreconnect = document.createElement('link');
+            linkPreconnect.rel = 'preconnect';
+            linkPreconnect.href = 'https://cdnjs.cloudflare.com';
+            document.head.appendChild(linkPreconnect);
+        });
+    </script>
+</body>
+</html>
